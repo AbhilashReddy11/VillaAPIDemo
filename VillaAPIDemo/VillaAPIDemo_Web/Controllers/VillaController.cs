@@ -46,17 +46,21 @@ namespace VillaAPIDemo_Web.Controllers
 				var response = await _villaService.CreateAsync<APIResponse>(model);
 				if (response != null && response.IsSuccess)
 				{
-					return RedirectToAction(nameof(IndexVilla));
+					TempData["success"] = "Villa created";
+
+                    return RedirectToAction(nameof(IndexVilla));
 				}
 			}
-			return View(model);
+            TempData["error"] = "error";
+            return View(model);
 		}
 		public async Task<IActionResult> UpdateVilla(int villaID)
 		{
 			var response = await _villaService.GetAsync<APIResponse>(villaID);
 			if (response != null && response.IsSuccess)
 			{
-				VillaDTO model = JsonConvert.DeserializeObject<VillaDTO>(Convert.ToString(response.Result));
+                
+                VillaDTO model = JsonConvert.DeserializeObject<VillaDTO>(Convert.ToString(response.Result));
 				return View(_mapper.Map<VillaUpdateDTO>(model));
 			}
 			return NotFound();
@@ -69,11 +73,14 @@ namespace VillaAPIDemo_Web.Controllers
 			{
 				var response = await _villaService.UpdateAsync<APIResponse>(model);
 				if (response != null && response.IsSuccess)
-				{
-					return RedirectToAction(nameof(IndexVilla));
+			    { 
+
+                    TempData["success"] = "Villa Updated";
+                return RedirectToAction(nameof(IndexVilla));
 				}
 			}
-			return View(model);
+            TempData["error"] = "error";
+            return View(model);
 		}
         public async Task<IActionResult> DeleteVilla(int villaID)
         {
@@ -93,9 +100,10 @@ namespace VillaAPIDemo_Web.Controllers
                 var response = await _villaService.DeleteAsync<APIResponse>(model.Id);
                 if (response != null && response.IsSuccess)
                 {
-                    return RedirectToAction(nameof(IndexVilla));
+                TempData["success"] = "Villa deleted";
+                return RedirectToAction(nameof(IndexVilla));
                 }
-            
+            TempData["error"] = "error";
             return View(model);
         }
     }

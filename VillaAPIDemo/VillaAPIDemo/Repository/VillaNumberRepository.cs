@@ -1,6 +1,6 @@
-﻿using VillaApi.Data;
-using VillaApi.Models;
+﻿using VillaApi.Models;
 using VillaApi.Repository.IRepository;
+using VillaAPIDemo.Data;
 
 namespace VillaApi.Repository
 {

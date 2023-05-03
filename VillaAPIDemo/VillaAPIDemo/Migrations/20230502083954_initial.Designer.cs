@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VillaApi.Data;
+using VillaAPIDemo.Data;
 
 #nullable disable
 
 namespace VillaAPIDemo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230430130724_AddVillaNumberToDb")]
-    partial class AddVillaNumberToDb
+    [Migration("20230502083954_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,18 +34,15 @@ namespace VillaAPIDemo.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Amenity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Details")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -73,7 +70,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 1,
                             Amenity = "qwertyu",
-                            CreatedDate = new DateTime(2023, 4, 30, 18, 37, 24, 55, DateTimeKind.Local).AddTicks(9466),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2126),
                             Details = "awsedrtfuikolkmj dxujhsgfgvbhkm rdgyuhijogf",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa3.jpg",
                             Name = "abc Villa",
@@ -86,7 +83,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 2,
                             Amenity = "oiuyt",
-                            CreatedDate = new DateTime(2023, 4, 30, 18, 37, 24, 55, DateTimeKind.Local).AddTicks(9481),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2141),
                             Details = "sedrftgyhuj oiujytdrf poiuytrsdcfgvhbjnmk ftgyuhj",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa1.jpg",
                             Name = "def Villa",
@@ -99,7 +96,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 3,
                             Amenity = "fghkj",
-                            CreatedDate = new DateTime(2023, 4, 30, 18, 37, 24, 55, DateTimeKind.Local).AddTicks(9483),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2143),
                             Details = "wertyuhj lkjhgfd poiuytrdsx kjhgfd",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa4.jpg",
                             Name = "qwe Villa",
@@ -112,7 +109,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 4,
                             Amenity = "dfgjhgjh",
-                            CreatedDate = new DateTime(2023, 4, 30, 18, 37, 24, 55, DateTimeKind.Local).AddTicks(9485),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2145),
                             Details = "sdfgkjhgfd iuytrdf sdfyujk lokjhgfd",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa5.jpg",
                             Name = "poi Villa",
@@ -125,7 +122,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 5,
                             Amenity = "ertyui",
-                            CreatedDate = new DateTime(2023, 4, 30, 18, 37, 24, 55, DateTimeKind.Local).AddTicks(9546),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2147),
                             Details = "qwertyuiolkj sdfghjkl lkiuytredxcvbnm sdfghjkkkmnbvcd",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa2.jpg",
                             Name = "mnb Villa",
@@ -145,7 +142,6 @@ namespace VillaAPIDemo.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SpecialDetails")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedDate")

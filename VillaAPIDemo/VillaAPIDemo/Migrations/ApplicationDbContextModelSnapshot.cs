@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VillaApi.Data;
+using VillaAPIDemo.Data;
 
 #nullable disable
 
@@ -67,7 +67,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 1,
                             Amenity = "qwertyu",
-                            CreatedDate = new DateTime(2023, 5, 1, 16, 28, 51, 500, DateTimeKind.Local).AddTicks(108),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2126),
                             Details = "awsedrtfuikolkmj dxujhsgfgvbhkm rdgyuhijogf",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa3.jpg",
                             Name = "abc Villa",
@@ -80,7 +80,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 2,
                             Amenity = "oiuyt",
-                            CreatedDate = new DateTime(2023, 5, 1, 16, 28, 51, 500, DateTimeKind.Local).AddTicks(120),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2141),
                             Details = "sedrftgyhuj oiujytdrf poiuytrsdcfgvhbjnmk ftgyuhj",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa1.jpg",
                             Name = "def Villa",
@@ -93,7 +93,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 3,
                             Amenity = "fghkj",
-                            CreatedDate = new DateTime(2023, 5, 1, 16, 28, 51, 500, DateTimeKind.Local).AddTicks(122),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2143),
                             Details = "wertyuhj lkjhgfd poiuytrdsx kjhgfd",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa4.jpg",
                             Name = "qwe Villa",
@@ -106,7 +106,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 4,
                             Amenity = "dfgjhgjh",
-                            CreatedDate = new DateTime(2023, 5, 1, 16, 28, 51, 500, DateTimeKind.Local).AddTicks(123),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2145),
                             Details = "sdfgkjhgfd iuytrdf sdfyujk lokjhgfd",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa5.jpg",
                             Name = "poi Villa",
@@ -119,7 +119,7 @@ namespace VillaAPIDemo.Migrations
                         {
                             Id = 5,
                             Amenity = "ertyui",
-                            CreatedDate = new DateTime(2023, 5, 1, 16, 28, 51, 500, DateTimeKind.Local).AddTicks(125),
+                            CreatedDate = new DateTime(2023, 5, 2, 14, 9, 54, 151, DateTimeKind.Local).AddTicks(2147),
                             Details = "qwertyuiolkj sdfghjkl lkiuytredxcvbnm sdfghjkkkmnbvcd",
                             ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa2.jpg",
                             Name = "mnb Villa",

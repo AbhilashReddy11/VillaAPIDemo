@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VillaApi.Models;
 
-namespace VillaApi.Data
+namespace VillaAPIDemo.Data
 {
 
     public class ApplicationDbContext : DbContext
@@ -21,7 +21,7 @@ namespace VillaApi.Data
                 new Villa
                 {
                     Id = 1,
-                    Name = "abc Villa",
+                    Name = "one Villa",
                     Details = "awsedrtfuikolkmj dxujhsgfgvbhkm rdgyuhijogf",
                     ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa3.jpg",
                     Occupancy = 7,
@@ -33,7 +33,7 @@ namespace VillaApi.Data
               new Villa
               {
                   Id = 2,
-                  Name = "def Villa",
+                  Name = "two Villa",
                   Details = "sedrftgyhuj oiujytdrf poiuytrsdcfgvhbjnmk ftgyuhj",
                   ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa1.jpg",
                   Occupancy = 9,
@@ -45,7 +45,7 @@ namespace VillaApi.Data
               new Villa
               {
                   Id = 3,
-                  Name = "qwe Villa",
+                  Name = "three Villa",
                   Details = "wertyuhj lkjhgfd poiuytrdsx kjhgfd",
                   ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa4.jpg",
                   Occupancy = 3,
@@ -57,7 +57,7 @@ namespace VillaApi.Data
               new Villa
               {
                   Id = 4,
-                  Name = "poi Villa",
+                  Name = "four Villa",
                   Details = "sdfgkjhgfd iuytrdf sdfyujk lokjhgfd",
                   ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa5.jpg",
                   Occupancy = 4,
@@ -69,7 +69,7 @@ namespace VillaApi.Data
               new Villa
               {
                   Id = 5,
-                  Name = "mnb Villa",
+                  Name = "five Villa",
                   Details = "qwertyuiolkj sdfghjkl lkiuytredxcvbnm sdfghjkkkmnbvcd",
                   ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa2.jpg",
                   Occupancy = 5,

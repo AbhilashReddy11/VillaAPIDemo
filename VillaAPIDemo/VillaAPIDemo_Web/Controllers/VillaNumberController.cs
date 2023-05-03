@@ -60,7 +60,8 @@ namespace VillaAPIDemo_Web.Controllers
 				var response = await _villaNumberService.CreateAsync<APIResponse>(model.VillaNumber);
 				if (response != null && response.IsSuccess)
 				{
-					return RedirectToAction(nameof(IndexVillaNumber));
+                    TempData["success"] = "VillaNumber Created";
+                    return RedirectToAction(nameof(IndexVillaNumber));
 				}
 				else
 				{
@@ -81,13 +82,14 @@ namespace VillaAPIDemo_Web.Controllers
 						Value = i.Id.ToString()
 					}); 
 			}
-			
-                return View(model);
+            TempData["error"] = "error";
+
+            return View(model);
 		}
-		public async Task<IActionResult> UpdateVillaNumber(int villaId)
+		public async Task<IActionResult> UpdateVillaNumber(int VillaID)
 		{
 			VillaNumberUpdateVM villaNumberVM = new();
-			var response = await _villaNumberService.GetAsync<APIResponse>(villaId);
+			var response = await _villaNumberService.GetAsync<APIResponse>(VillaID);
 			if (response != null && response.IsSuccess)
 			{
 				VillaNumberDTO model = JsonConvert.DeserializeObject<VillaNumberDTO>(Convert.ToString(response.Result));
@@ -115,7 +117,8 @@ namespace VillaAPIDemo_Web.Controllers
                     var response = await _villaNumberService.UpdateAsync<APIResponse>(model.VillaNumber);
                     if (response != null && response.IsSuccess)
                     {
-                        return RedirectToAction(nameof(IndexVillaNumber));
+                    TempData["success"] = "VillaNumber updated";
+                    return RedirectToAction(nameof(IndexVillaNumber));
                     }
                     else
                     {
@@ -136,17 +139,18 @@ namespace VillaAPIDemo_Web.Controllers
                             Value = i.Id.ToString()
                         });
                 }
+            TempData["error"] = "error";
 
-                return View(model);
+            return View(model);
             }
-		public async Task<IActionResult> DeleteVillaNumber(int villaId)
-		{
-            VillaNumberUpdateVM villaNumberVM = new();
-            var response = await _villaNumberService.GetAsync<APIResponse>(villaId);
+        public async Task<IActionResult> DeleteVillaNumber(int villaID)
+        {
+            VillaNumberDeleteVM villaNumberVM = new();
+            var response = await _villaNumberService.GetAsync<APIResponse>(villaID);
             if (response != null && response.IsSuccess)
             {
                 VillaNumberDTO model = JsonConvert.DeserializeObject<VillaNumberDTO>(Convert.ToString(response.Result));
-                villaNumberVM.VillaNumber = _mapper.Map<VillaNumberUpdateDTO>(model);
+                villaNumberVM.VillaNumber = model;
             }
             response = await _villaService.GetAllAsync<APIResponse>();
             if (response != null && response.IsSuccess)
@@ -160,19 +164,21 @@ namespace VillaAPIDemo_Web.Controllers
                 return View(villaNumberVM);
             }
             return NotFound();
-		}
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteVillaNumber(VillaNumberDeleteVM model)
-		{
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
 
-			var response = await _villaService.DeleteAsync<APIResponse>(model.VillaNumber.VillaNo);
-			if (response != null && response.IsSuccess)
-			{
-				return RedirectToAction(nameof(IndexVillaNumber));
-			}
+        public async Task<IActionResult> DeleteVillaNumber(VillaNumberDeleteVM model)
+        {
 
-			return View(model);
-		}
-	}
+            var response = await _villaNumberService.DeleteAsync<APIResponse>(model.VillaNumber.VillaNo);
+            if (response != null && response.IsSuccess)
+            {
+                TempData["success"] = "VillaNumber deleted";
+                return RedirectToAction(nameof(IndexVillaNumber));
+            }
+            TempData["error"] = "error";
+            return View(model);
+        }
+    }
 }

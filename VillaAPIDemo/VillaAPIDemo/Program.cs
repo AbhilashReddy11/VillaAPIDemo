@@ -1,11 +1,11 @@
 //using Serilog;
 
 using VillaApi;
-using VillaApi.Data;
 using VillaApi.Logging;
 using Microsoft.EntityFrameworkCore;
 using VillaApi.Repository.IRepository;
 using VillaApi.Repository;
+using VillaAPIDemo.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
