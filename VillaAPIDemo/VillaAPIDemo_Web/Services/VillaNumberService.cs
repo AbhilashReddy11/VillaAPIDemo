@@ -16,61 +16,63 @@ namespace VillaAPIDemo_Web.Services
 
         }
 
-        public Task<T> CreateAsync<T>(VillaNumberCreateDTO dto)
+        public Task<T> CreateAsync<T>(VillaNumberCreateDTO dto, string Token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = SD.ApiType.POST,
                 Data = dto,
                 Url = villaUrl + "/api/VillaNumberAPI",
-               
+                Token = Token
+
             });
         }
 
-        public Task<T> DeleteAsync<T>(int id)
+        public Task<T> DeleteAsync<T>(int id, string Token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = SD.ApiType.DELETE,
                 Url = villaUrl + "/api/VillaNumberAPI/" + id,
-                
+                Token = Token
+
             });
         }
 
-        public Task<T> GetAllAsync<T>()
+        public Task<T> GetAllAsync<T>(string Token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = SD.ApiType.GET,
                 Url = villaUrl + "/api/VillaNumberAPI",
-                
+                Token = Token
+
             });
         }
 
-        public Task<T> GetAsync<T>(int id)
+        public Task<T> GetAsync<T>(int id, string Token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = SD.ApiType.GET,
                 Url = villaUrl + "/api/VillaNumberAPI/" + id,
-                
+                Token = Token
+
             });
         }
 
-        public Task<T> UpdateAsync<T>(VillaNumberUpdateDTO dto)
+        public Task<T> UpdateAsync<T>(VillaNumberUpdateDTO dto, string Token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = SD.ApiType.PUT,
                 Data = dto,
                 Url = villaUrl + "/api/VillaNumberAPI/" + dto.VillaNo,
-                
+                Token = Token
+
             });
         }
 
-        public Task UpdateAsync<T>(object villaNumber)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

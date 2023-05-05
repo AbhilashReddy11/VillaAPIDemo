@@ -1,4 +1,4 @@
-﻿using VillaAPIDemo_Web.Models.DTO;
+﻿using VillaAPIDemo_Web.Models.Dto;
 
 namespace VillaAPIDemo_Web.Services.IServices
 {

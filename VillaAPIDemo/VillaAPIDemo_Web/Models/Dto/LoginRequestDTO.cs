@@ -1,4 +1,5 @@
-﻿namespace VillaAPIDemo_Web.Models.DTO
+﻿using System.ComponentModel.DataAnnotations;
+namespace VillaAPIDemo_Web.Models.Dto
 {
     public class LoginRequestDTO
     {

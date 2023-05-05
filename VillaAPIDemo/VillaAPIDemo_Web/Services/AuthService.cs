@@ -1,6 +1,6 @@
 ﻿using VillaAPIDemo_Utility;
 using VillaAPIDemo_Web.Models;
-using VillaAPIDemo_Web.Models.DTO;
+using VillaAPIDemo_Web.Models.Dto;
 using VillaAPIDemo_Web.Services.IServices;
 
 namespace VillaAPIDemo_Web.Services

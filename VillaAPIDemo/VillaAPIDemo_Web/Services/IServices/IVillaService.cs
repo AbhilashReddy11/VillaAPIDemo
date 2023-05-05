@@ -6,11 +6,11 @@ namespace VillaAPIDemo_Web.Services.IServices
 {
     public interface IVillaService
     {
-        Task<T> GetAllAsync<T>();
-        Task<T> GetAsync<T>(int id);
-        Task<T> CreateAsync<T>(VillaCreateDTO dto);
-        Task<T> UpdateAsync<T>(VillaUpdateDTO dto);
-        Task<T> DeleteAsync<T>(int id);
+        Task<T> GetAllAsync<T>(string Token);
+        Task<T> GetAsync<T>(int id, string Token);
+        Task<T> CreateAsync<T>(VillaCreateDTO dto, string Token);
+        Task<T> UpdateAsync<T>(VillaUpdateDTO dto, string Token);
+        Task<T> DeleteAsync<T>(int id, string Token);
 
     }
 }

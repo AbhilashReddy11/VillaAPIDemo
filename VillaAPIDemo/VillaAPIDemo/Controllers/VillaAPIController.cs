@@ -37,7 +37,7 @@ namespace VillaApi.Controllers
         }
 
         [HttpGet]
-		[Authorize]
+		
 		[ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<APIResponse>> GetVillas()
         {
@@ -64,7 +64,7 @@ namespace VillaApi.Controllers
         }
 
         [HttpGet("{id:int}", Name = "GetVilla")]
-		[Authorize(Roles = "admin")]
+	
 		[ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -106,8 +106,9 @@ namespace VillaApi.Controllers
         }
 
         [HttpPost]
-		
-		[ProducesResponseType(StatusCodes.Status201Created)]
+        [Authorize(Roles = "admin")]
+
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<APIResponse>> CreateVilla([FromBody] VillaCreateDTO createDTO)
@@ -145,8 +146,8 @@ namespace VillaApi.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-		[Authorize(Roles = "custom")]
-		public async Task<ActionResult<APIResponse>> DeleteVilla(int id)
+        [Authorize(Roles = "admin")]
+        public async Task<ActionResult<APIResponse>> DeleteVilla(int id)
         {
             try
             {
@@ -176,7 +177,7 @@ namespace VillaApi.Controllers
         }
 
 
-
+        [Authorize(Roles = "admin")]
         [HttpPut("{id:int}", Name = "UpdateVilla")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

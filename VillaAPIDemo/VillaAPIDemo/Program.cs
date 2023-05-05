@@ -87,7 +87,6 @@ builder.Services.AddSwaggerGen(
 		}
 	});
 	});
-//builder.Services.AddSingleton<ILogging, Logging>();
 
 var app = builder.Build();
 
