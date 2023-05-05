@@ -76,7 +76,7 @@ namespace VillaAPIDemo_Web.Controllers
 			HttpContext.Session.SetString(SD.SessionToken, "");
 			return RedirectToAction("Index","Home");
 		}
-        public IActionResult AccesDenied()
+        public IActionResult AccessDenied()
         {
             return View();
 
