@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using VillaApi.Models;
-using VillaAPIDemo.Models.DTO;
-using VillaAPIDemo.Repository.IRepository;
+using VillaAPI.Models;
+using VillaAPI.Models.DTO;
+using VillaAPI.Repository.IRepository;
 
-namespace VillaAPIDemo.Controllers
+namespace VillaAPI.Controllers
 {
     [Route("api/v{version:apiVersion}/UsersAuth")]
     [ApiController]

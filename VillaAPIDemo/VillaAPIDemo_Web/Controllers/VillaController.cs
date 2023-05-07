@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Reflection.Metadata.Ecma335;
-using VillaAPIDemo_Utility;
-using VillaAPIDemo_Web.Models;
-using VillaAPIDemo_Web.Models.Dto;
-using VillaAPIDemo_Web.Models.VM;
-using VillaAPIDemo_Web.Services;
-using VillaAPIDemo_Web.Services.IServices;
+using VillaAPI_Utility;
+using VillaAPI_Web.Models;
+using VillaAPI_Web.Models.Dto;
+using VillaAPI_Web.Models.VM;
+using VillaAPI_Web.Services;
+using VillaAPI_Web.Services.IServices;
 
-namespace VillaAPIDemo_Web.Controllers
+namespace VillaAPI_Web.Controllers
 {
 
 	public class VillaController : Controller

@@ -1,4 +1,4 @@
-namespace VillaAPIDemo_Web.Models
+namespace VillaAPI_Web.Models
 {
     public class ErrorViewModel
     {

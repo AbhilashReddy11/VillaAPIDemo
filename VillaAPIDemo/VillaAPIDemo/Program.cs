@@ -1,13 +1,13 @@
 //using Serilog;
 
-using VillaApi;
-using VillaApi.Logging;
+using VillaAPI;
+using VillaAPI.Logging;
 using Microsoft.EntityFrameworkCore;
-using VillaApi.Repository.IRepository;
-using VillaApi.Repository;
-using VillaAPIDemo.Data;
-using VillaAPIDemo.Repository.IRepository;
-using VillaAPIDemo.Repository;
+using VillaAPI.Repository.IRepository;
+using VillaAPI.Repository;
+using VillaAPI.Data;
+using VillaAPI.Repository.IRepository;
+using VillaAPI.Repository;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;

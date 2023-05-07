@@ -1,8 +1,8 @@
 ﻿
 using AutoMapper;
-using VillaAPIDemo_Web.Models.Dto;
+using VillaAPI_Web.Models.Dto;
 
-namespace VillaAPIDemo_Web
+namespace VillaAPI_Web
 {
     public class MappingConfig : Profile
     {

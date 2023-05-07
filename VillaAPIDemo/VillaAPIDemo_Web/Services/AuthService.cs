@@ -1,9 +1,9 @@
-﻿using VillaAPIDemo_Utility;
-using VillaAPIDemo_Web.Models;
-using VillaAPIDemo_Web.Models.Dto;
-using VillaAPIDemo_Web.Services.IServices;
+﻿using VillaAPI_Utility;
+using VillaAPI_Web.Models;
+using VillaAPI_Web.Models.Dto;
+using VillaAPI_Web.Services.IServices;
 
-namespace VillaAPIDemo_Web.Services
+namespace VillaAPI_Web.Services
 {
 	public class AuthService : BaseService ,IAuthService
 	{

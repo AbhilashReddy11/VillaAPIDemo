@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using static VillaAPIDemo_Utility.SD;
+using static VillaAPI_Utility.SD;
 
-namespace VillaAPIDemo_Web
+namespace VillaAPI_Web
 {
     public class APIRequest
     {

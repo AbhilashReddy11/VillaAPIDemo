@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using VillaApi.Models;
-using VillaApi.Repository.IRepository;
-using VillaAPIDemo.Data;
+using VillaAPI.Models;
+using VillaAPI.Repository.IRepository;
+using VillaAPI.Data;
 
 namespace VillaApi.Repository
 {

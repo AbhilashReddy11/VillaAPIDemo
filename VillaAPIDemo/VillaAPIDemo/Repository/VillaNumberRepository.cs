@@ -1,8 +1,9 @@
-﻿using VillaApi.Models;
-using VillaApi.Repository.IRepository;
-using VillaAPIDemo.Data;
+﻿using VillaAPI.Models;
+using VillaAPI.Repository.IRepository;
+using VillaAPI.Data;
+using VillaApi.Repository;
 
-namespace VillaApi.Repository
+namespace VillaAPI.Repository
 {
     public class VillaNumberRepository : Repository<VillaNumber>, IVillaNumberRepository
 

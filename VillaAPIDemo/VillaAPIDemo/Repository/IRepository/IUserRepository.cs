@@ -1,7 +1,7 @@
-﻿using VillaAPIDemo.Models;
-using VillaAPIDemo.Models.DTO;
+﻿using VillaAPI.Models;
+using VillaAPI.Models.DTO;
 
-namespace VillaAPIDemo.Repository.IRepository
+namespace VillaAPI.Repository.IRepository
 {
     public interface IUserRepository
     {

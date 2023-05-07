@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Net;
-using VillaApi.Models;
-using VillaApi.Models.DTO;
-using VillaApi.Repository.IRepository;
+using VillaAPI.Models;
+using VillaAPI.Models.DTO;
+using VillaAPI.Repository.IRepository;
 
-namespace VillaAPIDemo.Controllers.v1
+namespace VillaAPI.Controllers.v1
 {
     [Route("api/v{version:apiVersion}/VillaNumberAPI")]
     [ApiController]
@@ -30,7 +30,7 @@ namespace VillaAPIDemo.Controllers.v1
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [Authorize(Roles = "admin")]
+        
         public async Task<ActionResult<APIResponse>> GetVillaNumbers()
         {
 

@@ -4,12 +4,12 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using VillaAPIDemo.Data;
-using VillaAPIDemo.Models;
-using VillaAPIDemo.Models.DTO;
-using VillaAPIDemo.Repository.IRepository;
+using VillaAPI.Data;
+using VillaAPI.Models;
+using VillaAPI.Models.DTO;
+using VillaAPI.Repository.IRepository;
 
-namespace VillaAPIDemo.Repository
+namespace VillaAPI.Repository
 {
     public class UserRepository : IUserRepository
     {

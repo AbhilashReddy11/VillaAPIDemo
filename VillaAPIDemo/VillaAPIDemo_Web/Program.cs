@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using VillaAPIDemo_Web;
-using VillaAPIDemo_Web.Services;
-using VillaAPIDemo_Web.Services.IServices;
+using VillaAPI_Web;
+using VillaAPI_Web.Services;
+using VillaAPI_Web.Services.IServices;
 
 var builder = WebApplication.CreateBuilder(args);
 

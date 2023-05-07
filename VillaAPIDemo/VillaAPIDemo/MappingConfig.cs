@@ -1,8 +1,8 @@
-﻿using VillaApi.Models.DTO;
-using VillaApi.Models;
+﻿using VillaAPI.Models.DTO;
+using VillaAPI.Models;
 using AutoMapper;
 
-namespace VillaApi
+namespace VillaAPI
 {
     public class MappingConfig : Profile
     {

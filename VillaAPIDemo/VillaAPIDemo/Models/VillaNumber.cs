@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace VillaApi.Models
+namespace VillaAPI.Models
 {
     public class VillaNumber
     {

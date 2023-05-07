@@ -1,4 +1,4 @@
-﻿namespace VillaAPIDemo_Utility
+﻿namespace VillaAPI_Utility
 {
     public static class SD
     {

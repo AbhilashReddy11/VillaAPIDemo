@@ -1,6 +1,6 @@
-﻿using VillaAPIDemo_Web.Models;
+﻿using VillaAPI_Web.Models;
 
-namespace VillaAPIDemo_Web.Services.IServices
+namespace VillaAPI_Web.Services.IServices
 {
     public interface IBaseService
     {

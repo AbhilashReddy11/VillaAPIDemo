@@ -1,6 +1,6 @@
-﻿using VillaApi.Models;
+﻿using VillaAPI.Models;
 
-namespace VillaApi.Repository.IRepository
+namespace VillaAPI.Repository.IRepository
 {
     public interface IVillaNumberRepository : IRepository<VillaNumber>
     {

@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
-using VillaAPIDemo_Utility;
-using VillaAPIDemo_Web.Models;
+using VillaAPI_Utility;
+using VillaAPI_Web.Models;
 
-namespace VillaAPIDemo_Web.Services.IServices
+namespace VillaAPI_Web.Services.IServices
 {
     public class BaseService : IBaseService
     {

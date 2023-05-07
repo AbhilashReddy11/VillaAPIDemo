@@ -1,6 +1,6 @@
-﻿using VillaApi.Models.DTO;
+﻿using VillaAPI.Models.DTO;
 
-namespace VillaApi.Data
+namespace VillaAPI.Data
 {
     public class VillaStore
     {

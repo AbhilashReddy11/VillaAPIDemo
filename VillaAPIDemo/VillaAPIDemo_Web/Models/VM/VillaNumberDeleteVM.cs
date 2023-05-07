@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using VillaAPIDemo_Web.Models.Dto;
+using VillaAPI_Web.Models.Dto;
 
-namespace VillaAPIDemo_Web.Models.VM
+namespace VillaAPI_Web.Models.VM
 {
 	public class VillaNumberDeleteVM
 	{

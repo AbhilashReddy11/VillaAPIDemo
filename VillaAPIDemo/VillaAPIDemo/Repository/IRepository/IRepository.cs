@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
-using VillaApi.Models;
+using VillaAPI.Models;
 
-namespace VillaApi.Repository.IRepository
+namespace VillaAPI.Repository.IRepository
 {
     public interface IRepository<T> where T : class
     {

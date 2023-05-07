@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Security.Claims;
-using VillaAPIDemo_Utility;
-using VillaAPIDemo_web.Models.Dto;
-using VillaAPIDemo_Web.Models;
-using VillaAPIDemo_Web.Models.Dto;
-using VillaAPIDemo_Web.Services.IServices;
+using VillaAPI_Utility;
+using VillaAPI_Web.Models.Dto;
+using VillaAPI_Web.Models;
+using VillaAPI_Web.Models.Dto;
+using VillaAPI_Web.Services.IServices;
 
-namespace VillaAPIDemo_Web.Controllers
+namespace VillaAPI_Web.Controllers
 {
 	
 

@@ -1,8 +1,8 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
-using VillaAPIDemo_Web.Models;
+using VillaAPI_Web.Models;
 
-namespace VillaAPIDemo_web.Models.Dto
+namespace VillaAPI_Web.Models.Dto
 {
     public class LoginResponseDTO
     {

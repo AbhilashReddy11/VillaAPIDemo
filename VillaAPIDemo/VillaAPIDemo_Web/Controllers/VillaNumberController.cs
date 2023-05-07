@@ -6,14 +6,14 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Data;
 using System.Net;
-using VillaAPIDemo_Utility;
-using VillaAPIDemo_Web.Models;
-using VillaAPIDemo_Web.Models.Dto;
-using VillaAPIDemo_Web.Models.VM;
-using VillaAPIDemo_Web.Services;
-using VillaAPIDemo_Web.Services.IServices;
+using VillaAPI_Utility;
+using VillaAPI_Web.Models;
+using VillaAPI_Web.Models.Dto;
+using VillaAPI_Web.Models.VM;
+using VillaAPI_Web.Services;
+using VillaAPI_Web.Services.IServices;
 
-namespace VillaAPIDemo_Web.Controllers
+namespace VillaAPI.Controllers
 {
 	public class VillaNumberController : Controller
 	{
@@ -27,7 +27,8 @@ namespace VillaAPIDemo_Web.Controllers
 			_mapper = mapper;
 			_villaService = villaService;
 		}
-		public async Task<IActionResult> IndexVillaNumber()
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> IndexVillaNumber()
 		{
 			List<VillaNumberDTO> list = new();
 

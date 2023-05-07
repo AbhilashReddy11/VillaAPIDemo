@@ -1,4 +1,4 @@
-﻿namespace VillaApi.Logging
+﻿namespace VillaAPI.Logging
 {
     public interface ILogging
     {

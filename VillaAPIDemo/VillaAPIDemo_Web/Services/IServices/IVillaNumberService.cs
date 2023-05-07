@@ -1,8 +1,8 @@
 ﻿
 
-using VillaAPIDemo_Web.Models.Dto;
+using VillaAPI_Web.Models.Dto;
 
-namespace VillaAPIDemo_Web.Services.IServices
+namespace VillaAPI_Web.Services.IServices
 {
     public interface IVillaNumberService
     {
