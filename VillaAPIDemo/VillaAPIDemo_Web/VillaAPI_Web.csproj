@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VillaAPIDemo_Utility\VillaAPIDemo_Utility.csproj" />
+    <ProjectReference Include="..\VillaAPIDemo_Utility\VillaAPI_Utility.csproj" />
   </ItemGroup>
 
 </Project>
