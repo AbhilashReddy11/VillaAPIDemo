@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +24,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 });
 
 
-
+builder.Services.AddResponseCaching();
 builder.Services.AddScoped<IVillaRepository, VillaRepository>();
 builder.Services.AddScoped<IVillaNumberRepository, VillaNumberRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -61,6 +62,10 @@ builder.Services.AddAuthentication(x =>
 
 builder.Services.AddControllers(option =>
 {
+    option.CacheProfiles.Add("Default30", new CacheProfile()
+    {
+Duration=30
+    });
     
 }).AddNewtonsoftJson().AddXmlDataContractSerializerFormatters();
 

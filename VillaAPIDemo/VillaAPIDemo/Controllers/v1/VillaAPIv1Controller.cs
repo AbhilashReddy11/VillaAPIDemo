@@ -9,6 +9,8 @@ using AutoMapper;
 using VillaApi.Repository.IRepository;
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
+using VillaAPIDemo.Models;
+using System.Text.Json;
 
 namespace VillaAPIDemo.Controllers.v1
 {
@@ -33,14 +35,34 @@ namespace VillaAPIDemo.Controllers.v1
         }
 
         [HttpGet]
+        [ResponseCache(CacheProfileName= "Default30")]
 
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<APIResponse>> GetVillas()
+        public async Task<ActionResult<APIResponse>> GetVillas([FromQuery(Name ="Filteroccupancy")]int? occupancy, [FromQuery]string? search, int pageSize = 0, int pageNumber = 1)
         {
 
             try
             {
-                IEnumerable<Villa> villaList = await _dbVilla.GetAllAsync();
+                IEnumerable<Villa> villaList; 
+                if(occupancy >0)
+                {
+                    villaList = await _dbVilla.GetAllAsync(u => u.Occupancy == occupancy, pageSize : pageSize, pageNumber:pageNumber);
+                }
+                else
+                {
+                    villaList = await _dbVilla.GetAllAsync();
+
+                }
+                if (!string.IsNullOrEmpty(search))
+                {
+                    villaList = villaList.Where(u => u.Name.ToLower().Contains(search));
+                }
+                Pagination pagination = new() {
+                    PageNumber = pageNumber, PageSize = pageSize
+                };
+
+                Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagination));
+
                 _response.Result = _mapper.Map<List<VillaDTO>>(villaList);
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
@@ -60,6 +82,7 @@ namespace VillaAPIDemo.Controllers.v1
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+       // [ResponseCache(Location = ResponseCacheLocation.None,NoStore =true)]
 
 
         public async Task<ActionResult<APIResponse>> GetVilla(int id)
@@ -77,7 +100,7 @@ namespace VillaAPIDemo.Controllers.v1
                 var villa = await _dbVilla.GetAsync(u => u.Id == id);
                 if (villa == null)
                 {
-
+                    _response.IsSuccess = false;
                     _response.StatusCode = HttpStatusCode.NotFound;
                     return NotFound(_response);
 
@@ -98,11 +121,11 @@ namespace VillaAPIDemo.Controllers.v1
         }
 
         [HttpPost]
-        [Authorize(Roles = "admin")]
-
+       
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //[Authorize(Roles = "admin")]
         public async Task<ActionResult<APIResponse>> CreateVilla([FromBody] VillaCreateDTO createDTO)
         {
             try
@@ -138,7 +161,7 @@ namespace VillaAPIDemo.Controllers.v1
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [Authorize(Roles = "admin")]
+   //     [Authorize(Roles = "admin")]
         public async Task<ActionResult<APIResponse>> DeleteVilla(int id)
         {
             try
@@ -169,10 +192,11 @@ namespace VillaAPIDemo.Controllers.v1
         }
 
 
-        [Authorize(Roles = "admin")]
+        
         [HttpPut("{id:int}", Name = "UpdateVilla")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+       // [Authorize(Roles = "admin")]
         public async Task<ActionResult<APIResponse>> UpdateVilla(int id, [FromBody] VillaUpdateDTO updateDTO)
         {
             try

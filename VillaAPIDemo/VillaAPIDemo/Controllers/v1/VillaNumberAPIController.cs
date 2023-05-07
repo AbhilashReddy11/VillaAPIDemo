@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Net;
 using VillaApi.Models;
 using VillaApi.Models.DTO;
@@ -28,6 +30,7 @@ namespace VillaAPIDemo.Controllers.v1
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult<APIResponse>> GetVillaNumbers()
         {
 
@@ -163,6 +166,8 @@ namespace VillaAPIDemo.Controllers.v1
         [HttpPut("{id:int}", Name = "UpdateVillaNumber")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+
         public async Task<ActionResult<APIResponse>> UpdateVillaNumber(int id, [FromBody] VillaNumberUpdateDTO updateDTO)
         {
             try
